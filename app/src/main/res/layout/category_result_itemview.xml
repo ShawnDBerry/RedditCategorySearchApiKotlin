@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/avatar_circle_image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/avatar_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatar_pic_image_view"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_margin="16dp"
+        android:background="@color/categorySearchBackground"
+        app:layout_constraintBottom_toBottomOf="@id/avatar_circle_image_view"
+        app:layout_constraintStart_toStartOf="@id/avatar_circle_image_view"
+        app:layout_constraintTop_toTopOf="@id/avatar_circle_image_view"
+        app:layout_constraintEnd_toEndOf="@id/avatar_circle_image_view"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar_circle_image_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/body"
+        tool:text="Moniqueberry88" />
+
+    <TextView
+        android:id="@+id/body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar_circle_image_view"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
+        app:layout_constraintBottom_toTopOf="@id/comments"
+        tool:text="title" />
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/ups"
+        app:layout_constraintStart_toEndOf="@id/avatar_circle_image_view"
+        app:layout_constraintTop_toBottomOf="@id/body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tool:text="comments" />
+
+    <TextView
+        android:id="@+id/ups"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/downs"
+        app:layout_constraintStart_toEndOf="@id/comments"
+        app:layout_constraintTop_toBottomOf="@id/body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tool:text="ups" />
+
+    <TextView
+        android:id="@+id/downs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ups"
+        app:layout_constraintTop_toBottomOf="@id/body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tool:text="downs" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

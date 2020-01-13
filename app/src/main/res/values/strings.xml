@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RedditKolinApp</string>
+    <string name="search_button_text">SEARCH</string>
+</resources>

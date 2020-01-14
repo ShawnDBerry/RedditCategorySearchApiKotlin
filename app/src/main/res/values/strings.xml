@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RedditKolinApp</string>
     <string name="search_button_text">SEARCH</string>
+    <string name="comment_num_text">num of comments: %d</string>
+    <string name="likes_text">likes: %d</string>
+    <string name="dislikes_text">dislikes: %d</string>
 </resources>

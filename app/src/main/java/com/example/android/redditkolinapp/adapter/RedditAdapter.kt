@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.category_result_itemview.view.*
 
 class RedditAdapter(
     private var childList: List<Child>, private var redditItemDelegate: RedditItemDelegate,
-    private var applcationContext: Context
+    private var applicationContext: Context
 ) : RecyclerView.Adapter<RedditAdapter.RedditAdapterViewHolder>() {
 
     interface RedditItemDelegate {
@@ -47,12 +47,17 @@ class RedditAdapter(
     override fun onBindViewHolder(holder: RedditAdapterViewHolder, position: Int) {
         holder.userName.text = childList[position].data.author
         holder.body.text = childList[position].data.title
-        holder.comments.text = childList[position].data.numComments.toString()
-        holder.ups.text = childList[position].data.ups.toString()
-        holder.downs.text = childList[position].data.downs.toString()
+        holder.comments.text = applicationContext.getString(R.string.comment_num_text, childList[position].data.numComments)
+        holder.ups.text = applicationContext.getString(R.string.likes_text, childList[position].data.ups)
+       /* holder.downs.text = String.format("dislike %d",childList[position].data.downs)*/
+        holder.downs.text = applicationContext.getString(R.string.dislikes_text, childList[position].data.downs)
 
-        Glide.with(applcationContext).load(childList.get(position).getData().getThumbnail())
+        Glide.with(applicationContext).load(childList.get(position).getData().getThumbnail())
             .apply(RequestOptions.circleCropTransform()).into(holder.avatar)
+
+        holder.itemView.setOnClickListener {
+            redditItemDelegate.viewRedditItem(childList[position])
+        }
 
 
     }
